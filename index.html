@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abinje_perfume</title>
+    <meta name="description" content="Luxury fragrances crafted for elegance, longevity, and exclusivity. Explore Abinje's signature scents.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header/Hero Section -->
+    <header class="hero">
+  </div>
+ <nav class="silky-navbar">
+    <span class="logo">
+        <i class="fa-solid fa-star"></i>
+        <span id="logo-typing" class="typing"></span>
+    </span>
+    <div class="nav-links">
+        <!-- Example optional links, remove or add as needed -->
+        <a href="#products">Shop</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#newsletter">Newsletter</a>
+    </div>
+    <button class="darkmode-toggle" id="darkToggle" aria-label="Toggle dark mode">
+        <i class="fa-solid fa-moon"></i>
+    </button>
+</nav>
+<video autoplay muted loop playsinline class="hero-video">
+      <source src="/Img/perfume.mp4" type="video/mp4">
+      <!-- Optional message for browsers that don't support video -->
+    </video>
+
+
+        <div class="hero-content">
+            <div id="typing-multiline">
+               <span class="typing typing-row"></span>
+               <span class="typing typing-row"></span>
+            </div>
+
+            <div class="cta-group">
+                <a href="https://wa.me/+254759561716?text=Hi,+I+want+to+buy+your+perfume!" class="btn whatsapp" target="_blank"><i class="fa-brands fa-whatsapp"></i> Order on WhatsApp</a>
+                <a href="https://t.me/<channel>" class="btn telegram" target="_blank"><i class="fa-brands fa-telegram"></i> Join Telegram VIP</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Product Showcase Section -->
+   <section class="products" id="products">
+    <h2 class="fade">Our Collections</h2>
+    <p>Explore our exquisite range of Abinje perfumes, each crafted to evoke a unique sensory experience.</p><br>
+
+    <div class="product-grid">
+        <!-- Use free open images or your own URLs for each perfume bottle -->
+        <div class="product-card dancing fade" data-index="0"><img src="/Img/Orange-scandal.jpg" alt="Perfume 1"><div class="product-info"><h3>Orange scandal</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="1"><img src="/Img/Mon-paris.jpg" alt="Perfume 2"><div class="product-info"><h3>Mon Paris</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="2"><img src="/Img/Poison-girl.jpg" alt="Perfume 3"><div class="product-info"><h3>Poison girl</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="3"><img src="/Img/Burberry-her.jpg" alt="Perfume 4"><div class="product-info"><h3>Burberry Her</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="4"><img src="/Img/Invictus.jpg" alt="Perfume 5"><div class="product-info"><h3>Invictus</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="5"><img src="/Img/My-way.jpg" alt="Perfume 6"><div class="product-info"><h3>My Way</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="6"><img src="/Img/Amber.jpg" alt="Perfume 7"><div class="product-info"><h3>Amber Silk</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="7"><img src="/Img/Olimpiya.jpg" alt="Perfume 8"><div class="product-info"><h3>Olimpiya</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="11"><img src="/Img/Mon-paris1.jpg" alt="Perfume 12"><div class="product-info"><h3>Mon Paris1</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="12"><img src="/Img/Red-scandal.jpg" alt="Perfume 13"><div class="product-info"><h3>Red Scandal</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="13"><img src="/Img/Si-p.jpg" alt="Perfume 14"><div class="product-info"><h3>Si Perfume</h3><span class="price">Kshs. 250</span></div></div>
+        <div class="product-card dancing fade" data-index="14"><img src="/Img/Valiame.jpg" alt="Perfume 15"><div class="product-info"><h3>Valiame</h3><span class="price">Kshs. 250</span></div></div>
+    </div>
+</section>
+
+
+    <!-- Product Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal fade" id="modalPopup" role="dialog" aria-modal="true" tabindex="-1">
+            <span class="close" tabindex="0"><i class="fa-solid fa-xmark"></i></span>
+            <img id="modalImg" src="" alt="Perfume Details">
+            <h3 id="modalName"></h3>
+            <span id="modalPrice"></span>
+            <p id="modalDesc"></p>
+            <ul id="modalFeatures"></ul>
+            <a href="https://wa.me/+254759561716?text=Hi,+I+want+to+buy+your+perfume!" target="_blank" class="btn buyNow"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
+        </div>
+    </div>
+
+    <!-- Brand Story -->
+    <section class="brand-story fade">
+        <h2>Fragrance By Nature</h2>
+        <p>
+            Abinje fragrances are crafted to inspire confidence and celebrate an exclusive sense of self. Our blends are a tribute to timeless style, luxury, and distinction—each bottle an invitation to experience the finer things.
+        </p>
+        <div class="features">
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                <span>Long-lasting scent</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-oil-can"></i>
+                <span>Premium oils</span>
+            </div>
+            <div>
+                <i class="fa-solid fa-star"></i>
+                <span>Elegant design</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials fade">
+        <h2>What Our Clients Say</h2>
+        <div class="carousel" id="carousel">
+            <div class="testimonial active">
+                <i class="fa-solid fa-star"></i>
+                <p>"Absolutely divine scent. I feel more confident every time!"</p>
+                <span>- Sophia R.</span>
+            </div>
+            <div class="testimonial">
+                <i class="fa-solid fa-star"></i>
+                <p>"Lasted all day. Truly luxurious and unique fragrance."</p>
+                <span>- Daniel P.</span>
+            </div>
+            <div class="testimonial">
+                <i class="fa-solid fa-star"></i>
+                <p>"Packaging is elegant, but the scent is what steals the show."</p>
+                <span>- Amira L.</span>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <span class="prev" tabindex="0"><i class="fa-solid fa-chevron-left"></i></span>
+            <span class="next" tabindex="0"><i class="fa-solid fa-chevron-right"></i></span>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="newsletter fade">
+        <h2>Stay Exclusive</h2>
+        <form id="newsletterForm" action="https://formspree.io/f/<your_form_id>" method="POST" autocomplete="off">
+            <input type="email" name="email" id="emailInput" placeholder="Enter your email..." required>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <div id="successMsg" class="pop" role="status">Thank you for signing up!</div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="https://wa.me/+254759561716" class="fa-brands fa-whatsapp" target="_blank" aria-label="WhatsApp"></a>
+            <a href="https://t.me/<channel>" class="fa-brands fa-telegram" target="_blank" aria-label="Telegram"></a>
+            <a href="https://instagram.com/<username>" class="fa-brands fa-instagram" target="_blank" aria-label="Instagram"></a>
+            <a href="https://facebook.com/<username>" class="fa-brands fa-facebook" target="_blank" aria-label="Facebook"></a>
+        </div>
+        <span class="footer-note">© 2025 Abinje Perfume, Kenya</span>
+        <div class="darkmode-toggle" id="darkToggleFooter" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-moon"></i>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <a href="https://wa.me/+254759561716?text=Hi,+I+need+help!" class="whatsapp-chat-btn" target="_blank" aria-label="Chat with us on WhatsApp">
+  <span class="wa-chat-text">
+    Need Help? <b>Chat with us</b>
+  </span>
+  <span class="wa-bubble">
+    <i class="fa-brands fa-whatsapp"></i>
+  </span>
+</a>
+
+</body>
+</html>
