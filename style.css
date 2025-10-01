@@ -6,6 +6,7 @@
      --navbar-glass: rgba(255, 255, 255, 0.55);
   --navbar-glass-dark: rgba(30, 30, 30, 0.43);
   --navbar-shadow: 0 4px 22px rgba(212, 175, 55, 0.09), 0 1.5px 6px rgba(20, 20, 31, 0.10);
+
 }
 
 @keyframes headerDance {
@@ -18,6 +19,22 @@
 .hero {
   position: relative;
   overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0 1.2rem 3.2rem 1.2rem;
+    box-sizing: border-box;
+    text-align: center;
+    color: var(--white);
+    background: var(--black);
+    background: linear-gradient(120deg, rgba(20,20,31,0.93), rgba(50,50,70,0.8)),
+        url('https://images.unsplash.com/photo-1495106245174-55fc6b7c1d31?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+    filter: brightness(0.65) grayscale(0.5);
+    animation: headerDance 28s linear infinite;
+    transition: background 0.4s, filter 0.4s;
+
 }
 
 /* Video wrapper fits header only */
@@ -26,6 +43,8 @@
   top: 0; left: 0; width: 100%; height: 100%;
   z-index: 1;
   overflow: hidden;
+    pointer-events: none; /* Allows hero content to be clicked */
+
 }
 .hero-video {
   width: 100%; height: 100%;
@@ -41,6 +60,19 @@
 .hero > *:not(.hero-bg-video) {
   position: relative;
   z-index: 2;
+  animation: glow 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px var(--gold));
+  text-shadow: 0 2px 14px rgba(212,175,55,0.12);
+  animation: glow 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 4px var(--gold));
+  text-shadow: 0 2px 14px rgba(212,175,55,0.12);
+  animation: glow 3.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px var(--gold));
+    text-shadow: 0 2px 14px rgba(212,175,55,0.12);
+    animation: glow 3.2s ease-in-out infinite;
+    filter: drop-shadow(0 0 4px var(--gold));
+    text-shadow: 0 2px 14px rgba(212,175,55,0.12);
+
 }
 
 
@@ -55,6 +87,9 @@ header.hero {
     justify-content: flex-end;
     align-items: center;
     position: relative;
+    transition: background 0.4s, filter 0.4s;
+    overflow: hidden;
+
 }
 .silky-navbar {
     width: 100%;
@@ -75,6 +110,8 @@ header.hero {
 body.dark .silky-navbar {
     background: var(--navbar-glass-dark);
     box-shadow: 0 4px 32px var(--gold);
+    border-bottom: 1px solid rgba(212,175,55,0.1);
+
 }
 
 .silky-navbar .logo {
@@ -86,16 +123,47 @@ body.dark .silky-navbar {
     letter-spacing: 2px;
     font-weight: bold;
     gap: 0.55em;
+    user-select: none;
+    text-shadow: 0 2px 14px rgba(212,175,55,0.12);
+    filter: drop-shadow(0 0 4px var(--gold));
+    animation: glow 3.2s ease-in-out infinite;
+
 }
 
 .silky-navbar .logo i {
     font-size: 1.28em;
     filter: drop-shadow(0 0 4px var(--gold));
+    animation: glow 3.2s ease-in-out infinite;
+
 }
 
 .silky-navbar .nav-links {
     display: flex;
-    gap: 2.3em;
+    gap: 0.5em;
+    align-items: right;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 2;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.95rem;
+    font-weight: 500;
+    user-select: none;
+    white-space: nowrap;
+    margin-right: 0.5rem;
+    margin-left: auto;
+    /* Prevent nav from growing too wide on large screens */
+    max-width: 60%;
+    margin-left: auto;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* Add some spacing on smaller screens */
+    gap: 0.7em;
+    font-size: 1rem;
+    letter-spacing: 0.04em;
 }
 
 .silky-navbar .nav-links a {
@@ -108,14 +176,92 @@ body.dark .silky-navbar {
     background: rgba(255,255,255,0.10);
     padding: 0.42em 1em;
     border-radius: 19px;
+    position: relative;
     transition: background 0.22s, color 0.24s, box-shadow 0.25s;
 }
+.silky-navbar .nav-links a:hover {
+    background: var(--gold);
+    color: var(--black);
+    box-shadow: 0 4px 18px rgba(212,175,55,0.22);
+}
+.silky-navbar .nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0; bottom: 0;
+    width: 100%; height: 3px;
+    background: var(--black);
+    border-radius: 0 0 19px 19px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.27s cubic-bezier(0.42,0.29,0.34,1.59);
+}
+.silky-navbar .nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+.silky-navbar .nav-links a:active {
+    background: #ffeb8b;
+    color: var(--black);
+    box-shadow: 0 2px 12px rgba(212,175,55,0.33);
+}
+.silky-navbar .hamburger {
+  display: none;
+  font-size: 2rem;
+  color: var(--gold);
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
 
-.silky-navbar .nav-links a:hover,
-.silky-navbar .nav-links a:focus {
-    color: #fff;
-    background: linear-gradient(100deg, #ffeb8b 35%, var(--gold) 90%);
-    box-shadow: 0 2px 18px var(--gold);
+@media (max-width: 800px) {
+  .silky-navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.2rem 0.8rem 1.2rem;
+  }
+  .silky-navbar .hamburger {
+    display: block;
+  }
+ .nav-links-container {
+    display: none;
+    width: 92%;
+    margin: 0;
+    background: var(--navbar-glass-dark);
+    padding: 0.6em 0 1.1em 0;
+    border-radius: 16px;
+    box-shadow: 0 8px 28px rgba(212,175,55,0.15), 0 2px 10px rgba(20,20,31,0.14);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    z-index: 999;
+    
+  }
+  .silky-navbar.open .nav-links-container {
+    display: block;
+  }
+  .nav-links {
+    flex-direction: column;
+    gap: 1.12em;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* Optional: adjust for screens under 570px */
+@media (max-width: 570px) {
+  .nav-links-container {
+    border-radius: 0 0 8px 8px;
+    margin-top: 0.2rem;
+    padding: 0.5em 0 0.9em 0;
+    width: 100%;
+    left: 0;
+    transform: none;
+    top: 100%;
+    z-index: 999;
+  }
 }
 
 .silky-navbar .darkmode-toggle {
@@ -129,12 +275,23 @@ body.dark .silky-navbar {
     box-shadow: 0 2px 8px rgba(212,175,55,0.15);
     transition: background 0.21s, color 0.19s;
     outline: none;
+    user-select: none;
+    margin-left: 0.8rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    display: flex; align-items: center; gap: 0.4em;
+    justify-content: center;
 }
+
 
 .silky-navbar .darkmode-toggle:active,
 .silky-navbar .darkmode-toggle:focus {
     background: var(--gold);
     color: #fff;
+    box-shadow: 0 4px 18px rgba(212,175,55,0.22);
 }
 
 body.dark .silky-navbar .nav-links a,

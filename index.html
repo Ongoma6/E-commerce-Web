@@ -20,12 +20,16 @@
         <i class="fa-solid fa-star"></i>
         <span id="logo-typing" class="typing"></span>
     </span>
-    <div class="nav-links">
-        <!-- Example optional links, remove or add as needed -->
-        <a href="#products">Shop</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="#newsletter">Newsletter</a>
-    </div>
+   
+    <button class="hamburger" aria-label="Open Navigation">&#9776;</button>
+<div class="nav-links-container">
+  <div class="nav-links">
+    <a href="#products">Shop</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#newsletter">Newsletter</a>
+  </div>
+</div>
+
     <button class="darkmode-toggle" id="darkToggle" aria-label="Toggle dark mode">
         <i class="fa-solid fa-moon"></i>
     </button>
@@ -165,6 +169,12 @@
     <i class="fa-brands fa-whatsapp"></i>
   </span>
 </a>
+<script>
+document.querySelector('.hamburger').onclick = function() {
+  document.querySelector('.silky-navbar').classList.toggle('open');
+};
+</script>
+
 
 </body>
 </html>
